@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>自定义组件测试界面</title>
+  </head>
+  <body style="background-color: lightblue;">
+    <script src="https://cdn.bootcss.com/vue/2.5.11/vue.min.js"></script>
+    <script src="/dist/build.js"></script>
+    <div id="app" style="display: flex; height: 600px;">
+        <form-item-box style="flex: 1; margin-top: 120px; margin-left: 20px;"></form-item-box>
+        <form-designer v-bind:current="current" v-bind:fields="fields"style="flex: 1;"></form-designer>
+        <form-detail v-bind:current="current" style="flex: 1; margin-top: 120px;"></form-detail>
+      <!-- <print-designer style="height: 800px;"></print-designer> -->
+    </div>
+    <script>
+      // 创建根实例
+      new Vue({
+        el: '#app',
+        data: function(){
+          return {
+            current: {
+              field: null
+            },
+            fields: [],
+          };
+        }
+      })
+    </script>
+  </body>
+</html>
